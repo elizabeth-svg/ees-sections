@@ -1,0 +1,82 @@
+/* EES Sections — shared design system (eaglesimbeye.com) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Schibsted+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---- Statement block ---- */
+.ees-statement {
+	background: #08080a;
+	color: #f7f7f5;
+	padding: clamp(96px, 14vw, 220px) clamp(24px, 5vw, 80px);
+	font-family: "Schibsted Grotesk", "Helvetica Neue", Helvetica, system-ui, sans-serif;
+}
+.ees-statement .ees-inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+	column-gap: 32px;
+	row-gap: 40px;
+	align-items: start;
+}
+.ees-statement .ees-col:last-child {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	align-self: end;
+}
+.ees-statement .ees-eyebrow {
+	margin: 0 0 28px;
+	font-family: "JetBrains Mono", ui-monospace, monospace;
+	font-size: 11px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: #a8a8a4;
+}
+.ees-statement .ees-headline {
+	margin: 0;
+	font-family: "Poppins", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: clamp(1.75rem, 2.9vw, 2.625rem);
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+	color: #f7f7f5;
+	text-wrap: balance;
+}
+.ees-statement .ees-body {
+	margin: 0;
+	max-width: 54ch;
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #a8a8a4;
+	text-wrap: pretty;
+}
+.ees-statement .ees-cta {
+	align-self: start;
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	padding: 13px 22px;
+	border: 1px solid rgba(247, 247, 245, 0.22);
+	font-family: "JetBrains Mono", ui-monospace, monospace;
+	font-size: 11px;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: #f7f7f5;
+	text-decoration: none;
+	transition: background 260ms cubic-bezier(0.22, 1, 0.36, 1), color 260ms cubic-bezier(0.22, 1, 0.36, 1), border-color 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ees-statement .ees-cta:hover {
+	background: #f7f7f5;
+	border-color: #f7f7f5;
+	color: #08080a;
+}
+.ees-statement .ees-dot {
+	display: block;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: #f2ea36;
+}
+
+/* Keep the editor preview representative of the front end. */
+.editor-styles-wrapper .ees-statement { border-radius: 2px; }

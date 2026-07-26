@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ees/statement",
+	"title": "EES Statement",
+	"category": "design",
+	"icon": "editor-alignleft",
+	"description": "Eyebrow, statement headline, paragraph and a call-to-action. A core eaglesimbeye section.",
+	"keywords": [ "ees", "section", "statement" ],
+	"textdomain": "ees-sections",
+	"attributes": {
+		"eyebrow":  { "type": "string", "default": "" },
+		"headline": { "type": "string", "default": "" },
+		"body":     { "type": "string", "default": "" },
+		"ctaText":  { "type": "string", "default": "" },
+		"ctaUrl":   { "type": "string", "default": "" }
+	},
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"editorScript": "ees-statement-editor",
+	"style": "ees-sections-style",
+	"render": "file:./render.php"
+}
