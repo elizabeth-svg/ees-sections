@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ees/featured-case",
+	"title": "EES Featured Case",
+	"category": "design",
+	"icon": "format-image",
+	"description": "A full-bleed case-study image with meta line, title and one-line outcome, linking to the case study.",
+	"keywords": [ "ees", "case", "work" ],
+	"textdomain": "ees-sections",
+	"attributes": {
+		"imgId":  { "type": "number" },
+		"imgUrl": { "type": "string", "default": "" },
+		"meta":   { "type": "string", "default": "" },
+		"title":  { "type": "string", "default": "" },
+		"desc":   { "type": "string", "default": "" },
+		"url":    { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "anchor": true },
+	"editorScript": "ees-featured-case-editor",
+	"style": "ees-sections-style",
+	"render": "file:./render.php"
+}

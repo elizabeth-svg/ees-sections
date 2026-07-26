@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ees/spotlight",
+	"title": "EES Spotlight",
+	"category": "design",
+	"icon": "align-wide",
+	"description": "A single large statement over an optional projected-light background image.",
+	"keywords": [ "ees", "spotlight", "statement" ],
+	"textdomain": "ees-sections",
+	"attributes": {
+		"bgId":       { "type": "number" },
+		"bgUrl":      { "type": "string", "default": "" },
+		"eyebrow":    { "type": "string", "default": "" },
+		"statement":  { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "anchor": true },
+	"editorScript": "ees-spotlight-editor",
+	"style": "ees-sections-style",
+	"render": "file:./render.php"
+}

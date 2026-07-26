@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ees/hero",
+	"title": "EES Hero",
+	"category": "design",
+	"icon": "cover-image",
+	"description": "Full-height hero: eyebrow, large headline, meta line, call-to-action, over an optional background image.",
+	"keywords": [ "ees", "hero", "section" ],
+	"textdomain": "ees-sections",
+	"attributes": {
+		"bgId":     { "type": "number" },
+		"bgUrl":    { "type": "string", "default": "" },
+		"eyebrow":  { "type": "string", "default": "" },
+		"headline": { "type": "string", "default": "" },
+		"meta":     { "type": "string", "default": "" },
+		"ctaText":  { "type": "string", "default": "" },
+		"ctaUrl":   { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "anchor": true },
+	"editorScript": "ees-hero-editor",
+	"style": "ees-sections-style",
+	"render": "file:./render.php"
+}

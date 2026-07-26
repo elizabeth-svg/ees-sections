@@ -78,5 +78,109 @@
 	background: #f2ea36;
 }
 
+/* ---- Hero block ---- */
+.ees-hero {
+	position: relative;
+	min-height: 88svh;
+	display: flex;
+	align-items: flex-end;
+	padding: clamp(96px, 12vw, 160px) clamp(24px, 5vw, 80px) clamp(48px, 6vw, 80px);
+	background: #08080a;
+	background-size: cover;
+	background-position: center;
+	color: #f7f7f5;
+	overflow: hidden;
+	font-family: "Schibsted Grotesk", "Helvetica Neue", Helvetica, system-ui, sans-serif;
+}
+.ees-hero__scrim {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(8,8,10,0.88) 0%, rgba(8,8,10,0.35) 55%, rgba(8,8,10,0.55) 100%);
+	pointer-events: none;
+}
+.ees-hero__inner { position: relative; max-width: 1440px; margin: 0 auto; width: 100%; }
+.ees-hero__eyebrow {
+	margin: 0 0 20px;
+	font-family: "JetBrains Mono", ui-monospace, monospace;
+	font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a8a4;
+}
+.ees-hero__headline {
+	margin: 0 0 24px; max-width: 20ch;
+	font-family: "Poppins", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 700; text-transform: uppercase;
+	font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.02; letter-spacing: -0.02em;
+	color: #f7f7f5; text-wrap: balance;
+}
+.ees-hero__meta {
+	margin: 0 0 32px;
+	font-family: "JetBrains Mono", ui-monospace, monospace;
+	font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8a92;
+}
+
+/* ---- Spotlight block ---- */
+.ees-spotlight {
+	position: relative;
+	min-height: 60vh;
+	display: flex; align-items: center;
+	padding: clamp(96px, 14vw, 200px) clamp(24px, 5vw, 80px);
+	background: #08080a; background-size: cover; background-position: center;
+	color: #f7f7f5; overflow: hidden;
+}
+.ees-spotlight__scrim {
+	position: absolute; inset: 0;
+	background: linear-gradient(to right, rgba(8,8,10,0.78) 0%, rgba(8,8,10,0.35) 45%, rgba(8,8,10,0.78) 100%);
+	pointer-events: none;
+}
+.ees-spotlight__inner { position: relative; max-width: 1440px; margin: 0 auto; width: 100%; }
+.ees-spotlight__eyebrow {
+	margin: 0 0 24px;
+	font-family: "JetBrains Mono", ui-monospace, monospace;
+	font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a8a4;
+}
+.ees-spotlight__statement {
+	margin: 0;
+	font-family: "Poppins", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 700; text-transform: uppercase;
+	font-size: clamp(2rem, 5.5vw, 4rem); line-height: 1.0; letter-spacing: -0.025em;
+	color: #f7f7f5; text-wrap: balance;
+}
+
+/* ---- Featured case block ---- */
+.ees-case {
+	display: block;
+	background: #08080a; color: #f7f7f5; text-decoration: none;
+	padding: clamp(56px, 7vw, 104px) clamp(24px, 5vw, 80px) clamp(96px, 12vw, 160px);
+	font-family: "Schibsted Grotesk", "Helvetica Neue", Helvetica, system-ui, sans-serif;
+}
+.ees-case__media {
+	position: relative; aspect-ratio: 21 / 9; overflow: hidden; background: #101013;
+	margin: 0 auto 28px; max-width: 1440px;
+}
+.ees-case__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ees-case__media--empty {
+	display: flex; align-items: center; justify-content: center;
+	font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+	letter-spacing: 0.1em; color: #8a8a92; border: 1px dashed #2a2a30;
+}
+.ees-case__meta {
+	max-width: 1440px; margin: 0 auto 12px;
+	font-family: "JetBrains Mono", ui-monospace, monospace;
+	font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #8a8a92;
+}
+.ees-case__title {
+	max-width: 1440px; margin: 0 auto 12px;
+	font-family: "Poppins", "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 700; text-transform: uppercase;
+	font-size: clamp(1.25rem, 2.4vw, 2rem); line-height: 1.06; letter-spacing: -0.02em;
+	transition: color 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ees-case__desc { max-width: 1440px; margin: 0 auto; font-size: 1rem; line-height: 1.6; color: #a8a8a4; }
+a.ees-case:hover .ees-case__title { color: #f2ea36; }
+
 /* Keep the editor preview representative of the front end. */
-.editor-styles-wrapper .ees-statement { border-radius: 2px; }
+.editor-styles-wrapper .ees-statement,
+.editor-styles-wrapper .ees-hero,
+.editor-styles-wrapper .ees-spotlight,
+.editor-styles-wrapper .ees-case { border-radius: 2px; }
+.editor-styles-wrapper .ees-hero,
+.editor-styles-wrapper .ees-spotlight { min-height: 420px; }

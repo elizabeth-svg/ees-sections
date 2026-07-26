@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       EES Sections
  * Description:        Editable design-system section blocks for eaglesimbeye.com. Each section is a native, editable WordPress block with the site's design baked in.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Elizabeth Eagle-Simbeye
@@ -11,27 +11,37 @@
 
 defined( 'ABSPATH' ) || exit;
 
+define( 'EES_SECTIONS_VER', '0.2.0' );
+
 /**
- * Register shared assets and all section blocks on init.
+ * Register the shared stylesheet and every block found in /blocks.
+ * Each block folder must contain block.json whose "editorScript" is
+ * "ees-<folder>-editor" and (for dynamic blocks) a render.php.
  */
 add_action( 'init', function () {
 
-	// Shared design stylesheet (loads in editor + on the front end wherever a block renders).
 	wp_register_style(
 		'ees-sections-style',
 		plugins_url( 'assets/design.css', __FILE__ ),
 		array(),
-		'0.1.0'
+		EES_SECTIONS_VER
 	);
 
-	// --- Statement block (pilot) ---------------------------------------
-	wp_register_script(
-		'ees-statement-editor',
-		plugins_url( 'blocks/statement/edit.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-i18n' ),
-		'0.1.0',
-		true
-	);
+	$deps = array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-i18n' );
 
-	register_block_type( __DIR__ . '/blocks/statement' );
+	foreach ( glob( __DIR__ . '/blocks/*', GLOB_ONLYDIR ) as $dir ) {
+		$name = basename( $dir );
+
+		if ( file_exists( "$dir/edit.js" ) ) {
+			wp_register_script(
+				"ees-$name-editor",
+				plugins_url( "blocks/$name/edit.js", __FILE__ ),
+				$deps,
+				EES_SECTIONS_VER,
+				true
+			);
+		}
+
+		register_block_type( $dir );
+	}
 } );
