@@ -540,11 +540,19 @@
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { refresh(); });
   }
 
-  /* ── self-boot: DOMContentLoaded → document.fonts.ready (fallback) → rAF → boot() ── */
+  /* ── self-boot: DOMContentLoaded → rAF → boot(); boot promptly and re-measure
+        once fonts arrive (boot wires its own document.fonts.ready → refresh), but
+        never let a slow multi-family font load block the whole engine (~6s stall). ── */
   const start = () => { raf = requestAnimationFrame(() => boot()); };
   const mount = () => {
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(start);
-    else start();
+    let launched = false;
+    const go = () => { if (launched) return; launched = true; start(); };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(go);
+      setTimeout(go, 800); // cap: boot even if fonts are slow; refresh() corrects geometry later
+    } else {
+      start();
+    }
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount);
   else mount();
