@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       EES Sections
  * Description:        The eaglesimbeye.com design system in WordPress: the Home page reproduced verbatim from the Claude Design with its full motion engine, plus editable section blocks and full-width canvas templates.
- * Version:           0.7.5
+ * Version:           0.7.6
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Elizabeth Eagle-Simbeye
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'EES_SECTIONS_VER', '0.7.5' );
+define( 'EES_SECTIONS_VER', '0.7.6' );
 
 /**
  * Register the shared stylesheet and every block found in /blocks.

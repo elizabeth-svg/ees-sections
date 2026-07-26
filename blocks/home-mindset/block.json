@@ -16,7 +16,7 @@
   "attributes": {
     "eyebrow": {
       "type": "string",
-      "default": "<span style=\"color: #8a8a92\">06</span> / Mindset"
+      "default": "Mindset"
     },
     "headline": {
       "type": "string",

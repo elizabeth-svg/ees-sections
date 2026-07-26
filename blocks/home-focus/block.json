@@ -16,7 +16,7 @@
   "attributes": {
     "eyebrow": {
       "type": "string",
-      "default": "<span style=\"color: #8a8a92\">03</span> / Focus area"
+      "default": "Focus area"
     },
     "headline": {
       "type": "string",

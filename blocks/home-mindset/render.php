@@ -2,7 +2,7 @@
 <?php $a = $attributes; ?>
 <section data-screen-label="Mindset" style="padding: clamp(88px, 11vw, 176px) clamp(24px, 5vw, 80px)">
     <div style="opacity: 0; max-width: 1440px; margin: 0 auto">
-      <p data-fade="1" style="margin: 0 0 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a8a4"><?php echo wp_kses_post( $a['eyebrow'] ); ?></p>
+      <p data-fade="1" style="margin: 0 0 32px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a8a4"><span style="color: #8a8a92">06</span> / <?php echo esc_html( $a['eyebrow'] ); ?></p>
       <div style="display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 32px; row-gap: clamp(48px, 6vw, 80px)">
         <h2 data-scrub="1" style="margin: 0; max-width: 24ch; font-family: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif; text-transform: uppercase; font-size: clamp(1.75rem, 2.9vw, 2.625rem); font-weight: 700; line-height: 1.04; letter-spacing: -0.02em; color: #8a8a92"><?php echo esc_html( $a['headline'] ); ?></h2>
 

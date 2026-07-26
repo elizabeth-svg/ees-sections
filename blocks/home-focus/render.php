@@ -4,7 +4,7 @@
     <div style="opacity: 0; max-width: 1440px; margin: 0 auto">
       <div style="display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 32px; margin-bottom: clamp(56px, 7vw, 96px)">
         <div>
-          <p data-fade="1" style="margin: 0 0 28px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a8a4"><?php echo wp_kses_post( $a['eyebrow'] ); ?></p>
+          <p data-fade="1" style="margin: 0 0 28px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #a8a8a4"><span style="color: #8a8a92">03</span> / <?php echo esc_html( $a['eyebrow'] ); ?></p>
           <h2 data-scrub="1" style="margin: 0; font-family: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif; font-size: clamp(1.75rem, 2.9vw, 2.625rem); font-weight: 700; text-transform: uppercase; line-height: 1.05; letter-spacing: -0.02em; color: #8a8a92"><?php echo esc_html( $a['headline'] ); ?></h2>
         </div>
       </div>
