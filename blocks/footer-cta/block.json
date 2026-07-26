@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ees/footer-cta",
+	"title": "EES Footer CTA",
+	"category": "design",
+	"icon": "align-full-width",
+	"description": "Closing statement, a call-to-action, a column of links, and a copyright line.",
+	"keywords": [ "ees", "footer", "cta" ],
+	"textdomain": "ees-sections",
+	"attributes": {
+		"headline":  { "type": "string", "default": "" },
+		"ctaText":   { "type": "string", "default": "" },
+		"ctaUrl":    { "type": "string", "default": "" },
+		"links":     { "type": "array", "default": [] },
+		"copyright": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "anchor": true },
+	"editorScript": "ees-footer-cta-editor",
+	"style": "ees-sections-style",
+	"render": "file:./render.php"
+}

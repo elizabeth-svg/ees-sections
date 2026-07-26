@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       EES Sections
  * Description:        Editable design-system section blocks for eaglesimbeye.com, plus a full-width canvas page template. Each section is a native, editable WordPress block with the site's design baked in.
- * Version:           0.4.0
+ * Version:           0.5.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Elizabeth Eagle-Simbeye
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'EES_SECTIONS_VER', '0.4.0' );
+define( 'EES_SECTIONS_VER', '0.5.0' );
 
 /**
  * Register the shared stylesheet and every block found in /blocks.

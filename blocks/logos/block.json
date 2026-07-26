@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ees/logos",
+	"title": "EES Client Logos",
+	"category": "design",
+	"icon": "images-alt2",
+	"description": "An eyebrow and an evenly-spaced row of monochrome client logos. Add logos from your Media Library.",
+	"keywords": [ "ees", "logos", "clients" ],
+	"textdomain": "ees-sections",
+	"attributes": {
+		"eyebrow": { "type": "string", "default": "" },
+		"logos":   { "type": "array", "default": [] }
+	},
+	"supports": { "html": false, "anchor": true },
+	"editorScript": "ees-logos-editor",
+	"style": "ees-sections-style",
+	"render": "file:./render.php"
+}
