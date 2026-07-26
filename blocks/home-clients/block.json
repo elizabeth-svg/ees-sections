@@ -2,16 +2,35 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "ees/home-clients",
-  "title": "Home \u00b7 Clients",
+  "title": "Home · Clients",
   "category": "design",
   "icon": "cover-image",
-  "description": "eaglesimbeye.com Home \u2014 clients section (verbatim design markup + motion hooks).",
+  "description": "eaglesimbeye.com Home — clients section (verbatim design markup + motion hooks).",
   "supports": {
     "html": false,
     "reusable": false,
     "multiple": false,
     "inserter": true,
     "lock": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Selected clients"
+    },
+    "logos": {
+      "type": "array",
+      "default": [
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-disney.png?fit=250%2C125&ssl=1", "alt": "Disney", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-toyota.png?fit=250%2C125&ssl=1", "alt": "Toyota", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-ef.png?fit=250%2C125&ssl=1", "alt": "EF", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-cooplive.png?fit=250%2C125&ssl=1", "alt": "Co-op Live", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-vodafone.png?fit=250%2C125&ssl=1", "alt": "Vodafone", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-mastercard.png?fit=250%2C125&ssl=1", "alt": "Mastercard", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-nfum.png?fit=250%2C125&ssl=1", "alt": "NFU Mutual", "id": 0 },
+        { "url": "https://i0.wp.com/eaglesimbeye.com/wp-content/uploads/2026/02/Logos-hyundai.png?fit=250%2C125&ssl=1", "alt": "Hyundai", "id": 0 }
+      ]
+    }
   },
   "editorScript": "ees-home-clients-editor",
   "render": "file:./render.php"

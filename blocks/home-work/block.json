@@ -13,6 +13,18 @@
     "inserter": true,
     "lock": false
   },
+  "attributes": {
+    "eyebrow": { "type": "string", "default": "Work" },
+    "headline": { "type": "string", "default": "From an unframed problem to a delivered result." },
+    "body1": { "type": "string", "default": "I help organisations move from the problem nobody has named yet to the experience that solves it, built to work commercially and for the customer." },
+    "ctaText": { "type": "string", "default": "See the work" },
+    "ctaUrl": { "type": "string", "default": "https://eaglesimbeye.com/work/" },
+    "caseImage": { "type": "object", "default": { "id": 9080, "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/w-ef.jpg", "alt": "EF Englishtown global campaign" } },
+    "caseKicker": { "type": "string", "default": "EF Englishtown · Global Campaign" },
+    "caseTitle": { "type": "string", "default": "Global campaign & performance marketing" },
+    "caseStandfirst": { "type": "string", "default": "Performance at scale across markets, from acquisition strategy to the creative that carried it." },
+    "caseUrl": { "type": "string", "default": "https://eaglesimbeye.com/work/ef-englishtown-global-campaign-transformation/" }
+  },
   "editorScript": "ees-home-work-editor",
   "render": "file:./render.php"
 }

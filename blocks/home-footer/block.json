@@ -2,16 +2,55 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "ees/home-footer",
-  "title": "Home \u00b7 Footer",
+  "title": "Home · Footer",
   "category": "design",
   "icon": "cover-image",
-  "description": "eaglesimbeye.com Home \u2014 footer section (verbatim design markup + motion hooks).",
+  "description": "eaglesimbeye.com Home — footer section (verbatim design markup + motion hooks).",
   "supports": {
     "html": false,
     "reusable": false,
     "multiple": false,
     "inserter": true,
     "lock": false
+  },
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "default": "Based in Manchester. Available worldwide."
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Get in touch"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "https://eaglesimbeye.com/contact/"
+    },
+    "quickLinks": {
+      "type": "array",
+      "default": [
+        { "label": "Home", "url": "https://eaglesimbeye.com/", "color": "#f2ea36" },
+        { "label": "Portfolio", "url": "https://portfolio.eaglesimbeye.com/", "color": "#f7f7f5" },
+        { "label": "Work", "url": "https://eaglesimbeye.com/work/", "color": "#f7f7f5" },
+        { "label": "About", "url": "https://eaglesimbeye.com/about/", "color": "#f7f7f5" },
+        { "label": "Mentoring", "url": "https://eaglesimbeye.com/mentor/", "color": "#f7f7f5" },
+        { "label": "Thoughts", "url": "https://eaglesimbeye.com/design-thinking/", "color": "#f7f7f5" },
+        { "label": "Contact", "url": "https://eaglesimbeye.com/contact/", "color": "#f7f7f5" },
+        { "label": "Privacy Policy", "url": "https://eaglesimbeye.com/privacy-policy/", "color": "#f7f7f5" }
+      ]
+    },
+    "socialLinks": {
+      "type": "array",
+      "default": [
+        { "label": "LinkedIn", "url": "https://www.linkedin.com/in/eaglesimbeye/" },
+        { "label": "Medium", "url": "https://medium.com/@eaglesimbeye" },
+        { "label": "Substack", "url": "https://substack.com/@eaglesimbeye" }
+      ]
+    },
+    "copyright": {
+      "type": "string",
+      "default": "All rights reserved ©2026 eaglesimbeye.com"
+    }
   },
   "editorScript": "ees-home-footer-editor",
   "render": "file:./render.php"

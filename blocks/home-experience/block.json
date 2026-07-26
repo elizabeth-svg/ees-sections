@@ -13,6 +13,14 @@
     "inserter": true,
     "lock": false
   },
+  "attributes": {
+    "eyebrow": { "type": "string", "default": "Experience" },
+    "headline": { "type": "string", "default": "A career defined by curiosity, crossing borders, and building what matters." },
+    "body1": { "type": "string", "default": "I lead cross-functional teams to build experiences people trust and systems that travel across markets." },
+    "body2": { "type": "string", "default": "I understand the commercial side and the customer side, and I make the work serve both. I stay close enough to the build, the data, and the technology to know what is real, and far enough back to keep the whole thing pointed at the outcome." },
+    "ctaText": { "type": "string", "default": "About me" },
+    "ctaUrl": { "type": "string", "default": "https://eaglesimbeye.com/about/" }
+  },
   "editorScript": "ees-home-experience-editor",
   "render": "file:./render.php"
 }

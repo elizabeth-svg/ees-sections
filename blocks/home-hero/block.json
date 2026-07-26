@@ -2,16 +2,126 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "ees/home-hero",
-  "title": "Home \u00b7 Hero",
+  "title": "Home · Hero",
   "category": "design",
   "icon": "cover-image",
-  "description": "eaglesimbeye.com Home \u2014 hero section (verbatim design markup + motion hooks).",
+  "description": "eaglesimbeye.com Home — hero section (verbatim design markup + motion hooks).",
   "supports": {
     "html": false,
     "reusable": false,
     "multiple": false,
     "inserter": true,
     "lock": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "Principal, Experience Design"
+    },
+    "headline": {
+      "type": "string",
+      "default": "I turn business problems nobody has framed yet into experiences that work."
+    },
+    "meta1": {
+      "type": "string",
+      "default": "Twenty years in practice"
+    },
+    "meta2": {
+      "type": "string",
+      "default": "Manchester based"
+    },
+    "meta3": {
+      "type": "string",
+      "default": "Available worldwide"
+    },
+    "stage2Statement": {
+      "type": "string",
+      "default": "For the business and the customer. Two decades of winning the work, framing it, leading the team, and own the result."
+    },
+    "stage2Strap": {
+      "type": "string",
+      "default": "Clarity first · Craft always · Zero fluff"
+    },
+    "stage2CtaText": {
+      "type": "string",
+      "default": "Discover more"
+    },
+    "stage2CtaUrl": {
+      "type": "string",
+      "default": "https://eaglesimbeye.com/about/"
+    },
+    "reelVideoUrl": {
+      "type": "string",
+      "default": "https://eaglesimbeye.com/wp-content/uploads/2026/02/Showreel-1-1.mp4"
+    },
+    "reelPosterUrl": {
+      "type": "string",
+      "default": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-efplus.webp"
+    },
+    "tile1": {
+      "type": "object",
+      "default": {
+        "id": 9071,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-coop.jpg",
+        "alt": "Co-op campaign"
+      }
+    },
+    "tile2": {
+      "type": "object",
+      "default": {
+        "id": 9072,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-hyundai.jpg",
+        "alt": "Hyundai concept"
+      }
+    },
+    "tile3": {
+      "type": "object",
+      "default": {
+        "id": 9073,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-arena.jpg",
+        "alt": "Co-op Live"
+      }
+    },
+    "tile4": {
+      "type": "object",
+      "default": {
+        "id": 9074,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-efplus.webp",
+        "alt": "EF Englishtown"
+      }
+    },
+    "tile5": {
+      "type": "object",
+      "default": {
+        "id": 9075,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-g80.jpg",
+        "alt": "Genesis G80"
+      }
+    },
+    "tile6": {
+      "type": "object",
+      "default": {
+        "id": 9076,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-chevron-560.png",
+        "alt": "Wayfinding"
+      }
+    },
+    "tile7": {
+      "type": "object",
+      "default": {
+        "id": 9077,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/h-toyota-560.png",
+        "alt": "Toyota bZ4X"
+      }
+    },
+    "tile8": {
+      "type": "object",
+      "default": {
+        "id": 9078,
+        "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/w-kitschkandy-560.png",
+        "alt": "Kitsch Kandy"
+      }
+    }
   },
   "editorScript": "ees-home-hero-editor",
   "render": "file:./render.php"

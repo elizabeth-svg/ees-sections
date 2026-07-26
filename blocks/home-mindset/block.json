@@ -2,16 +2,49 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "ees/home-mindset",
-  "title": "Home \u00b7 Mindset",
+  "title": "Home · Mindset",
   "category": "design",
   "icon": "cover-image",
-  "description": "eaglesimbeye.com Home \u2014 mindset section (verbatim design markup + motion hooks).",
+  "description": "eaglesimbeye.com Home — mindset section (verbatim design markup + motion hooks).",
   "supports": {
     "html": false,
     "reusable": false,
     "multiple": false,
     "inserter": true,
     "lock": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "<span style=\"color: #8a8a92\">06</span> / Mindset"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Clarity first. Craft always. Courage where needed."
+    },
+    "rows": {
+      "type": "array",
+      "default": [
+        {
+          "category": "AI & Design",
+          "title": "What Machine Learning Teaches You About User Behaviour",
+          "standfirst": "Not groups with shared preferences, but people in states, and what that shift means for how you design.",
+          "url": "https://eaglesimbeye.com/design-thinking/"
+        },
+        {
+          "category": "Design Strategy",
+          "title": "Slowing Down to Go Faster: The Case Against Constant Iteration",
+          "standfirst": "Constant iteration without direction isn&rsquo;t learning. Why the best design work starts slow.",
+          "url": "https://eaglesimbeye.com/slowing-down-to-go-faster-the-case-against-constant-iteration/"
+        },
+        {
+          "category": "AI & Design",
+          "title": "What AI Actually Changes About UX Research",
+          "standfirst": "It can process forty transcripts in twenty minutes. It can&rsquo;t catch what a participant didn&rsquo;t say.",
+          "url": "https://eaglesimbeye.com/what-ai-actually-changes-about-ux-research/"
+        }
+      ]
+    }
   },
   "editorScript": "ees-home-mindset-editor",
   "render": "file:./render.php"

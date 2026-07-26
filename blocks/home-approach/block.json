@@ -13,6 +13,11 @@
     "inserter": true,
     "lock": false
   },
+  "attributes": {
+    "bgImage": { "type": "object", "default": { "id": 9079, "url": "https://eaglesimbeye.com/wp-content/uploads/2026/07/approach-bg-640.png", "alt": "" } },
+    "eyebrow": { "type": "string", "default": "Approach" },
+    "spotlight": { "type": "string", "default": "From ambition to alignment. From alignment to impact." }
+  },
   "editorScript": "ees-home-approach-editor",
   "render": "file:./render.php"
 }

@@ -2,16 +2,46 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "ees/home-focus",
-  "title": "Home \u00b7 Focus areas",
+  "title": "Home · Focus areas",
   "category": "design",
   "icon": "cover-image",
-  "description": "eaglesimbeye.com Home \u2014 focus section (verbatim design markup + motion hooks).",
+  "description": "eaglesimbeye.com Home — focus section (verbatim design markup + motion hooks).",
   "supports": {
     "html": false,
     "reusable": false,
     "multiple": false,
     "inserter": true,
     "lock": false
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "<span style=\"color: #8a8a92\">03</span> / Focus area"
+    },
+    "headline": {
+      "type": "string",
+      "default": "Designing systems, not just screens."
+    },
+    "rows": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Product Design",
+          "desc": "Complex platforms, multiple markets, millions of users. It has to ship, perform, and earn its place commercially.",
+          "url": "https://eaglesimbeye.com/work/"
+        },
+        {
+          "title": "Digital Transformation",
+          "desc": "Where design decisions become business decisions. I make sure experience leads the change.",
+          "url": "https://eaglesimbeye.com/work/"
+        },
+        {
+          "title": "Experience Strategy",
+          "desc": "Set at programme level, before anyone designs a screen. Done early, it lowers risk and speeds everything after.",
+          "url": "https://eaglesimbeye.com/work/"
+        }
+      ]
+    }
   },
   "editorScript": "ees-home-focus-editor",
   "render": "file:./render.php"
