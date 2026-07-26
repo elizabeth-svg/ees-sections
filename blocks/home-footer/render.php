@@ -37,4 +37,14 @@
   </footer>
 
 
-  
+  <div data-cross="1" aria-hidden="true" style="position: fixed; inset: 0; z-index: 95; pointer-events: none; opacity: 0">
+    <span data-cross-v="1" style="position: absolute; top: 0; bottom: 0; left: 0; width: 1px; background: rgba(247,247,245,0.16)"></span>
+    <span data-disc="1" style="position: absolute; top: 0; left: 0; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: #f7f7f5; mix-blend-mode: difference"></span>
+    <span data-cross-h="1" style="position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(247,247,245,0.16)"></span>
+  </div>
+
+  <div data-rails="1" aria-hidden="true" style="position: fixed; inset: 0; z-index: 2; display: flex; justify-content: center; pointer-events: none">
+    <div style="width: 100%; max-width: 1440px; border-left: 1px solid rgba(247,247,245,0.055); border-right: 1px solid rgba(247,247,245,0.055)"></div>
+  </div>
+
+</div>
