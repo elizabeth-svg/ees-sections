@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       EES Sections
- * Description:        Editable design-system section blocks for eaglesimbeye.com. Each section is a native, editable WordPress block with the site's design baked in.
- * Version:           0.3.0
+ * Description:        Editable design-system section blocks for eaglesimbeye.com, plus a full-width canvas page template. Each section is a native, editable WordPress block with the site's design baked in.
+ * Version:           0.4.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Elizabeth Eagle-Simbeye
@@ -11,12 +11,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'EES_SECTIONS_VER', '0.3.0' );
+define( 'EES_SECTIONS_VER', '0.4.0' );
 
 /**
  * Register the shared stylesheet and every block found in /blocks.
- * Each block folder must contain block.json whose "editorScript" is
- * "ees-<folder>-editor" and (for dynamic blocks) a render.php.
  */
 add_action( 'init', function () {
 
@@ -44,4 +42,38 @@ add_action( 'init', function () {
 
 		register_block_type( $dir );
 	}
+} );
+
+/**
+ * Belt-and-suspenders: make sure the design stylesheet loads on the front end
+ * for any page/post that uses an EES block (covers custom templates too).
+ */
+add_action( 'wp_enqueue_scripts', function () {
+	if ( is_singular() ) {
+		$post = get_post();
+		if ( $post && false !== strpos( (string) $post->post_content, 'wp:ees/' ) ) {
+			wp_enqueue_style( 'ees-sections-style' );
+		}
+	}
+} );
+
+/**
+ * Register the "EES Canvas" full-width page template (no theme chrome).
+ */
+add_filter( 'theme_page_templates', function ( $templates ) {
+	$templates['ees-canvas'] = __( 'EES Canvas (full width)', 'ees-sections' );
+	return $templates;
+} );
+
+add_filter( 'template_include', function ( $template ) {
+	if ( is_page() ) {
+		$slug = get_page_template_slug( get_queried_object_id() );
+		if ( 'ees-canvas' === $slug ) {
+			$custom = plugin_dir_path( __FILE__ ) . 'templates/ees-canvas.php';
+			if ( file_exists( $custom ) ) {
+				return $custom;
+			}
+		}
+	}
+	return $template;
 } );

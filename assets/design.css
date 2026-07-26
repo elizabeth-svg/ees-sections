@@ -216,6 +216,13 @@ a.ees-case:hover .ees-case__title { color: #f2ea36; }
 .ees-cta:hover { color: #08080a !important; }
 a.ees-case:hover .ees-case__title { color: #f2ea36 !important; }
 
+/* ---- EES Canvas template body reset ---- */
+body.ees-canvas-body { margin: 0; padding: 0; background: #08080a; overflow-x: hidden; }
+body.ees-canvas-body .ees-hero,
+body.ees-canvas-body .ees-statement,
+body.ees-canvas-body .ees-spotlight,
+body.ees-canvas-body .ees-case { max-width: none; }
+
 /* ---- Hero video background ---- */
 .ees-hero { position: relative; }
 .ees-hero__video {
