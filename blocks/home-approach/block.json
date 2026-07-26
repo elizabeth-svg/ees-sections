@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ees/home-approach",
+  "title": "Home \u00b7 Approach",
+  "category": "design",
+  "icon": "cover-image",
+  "description": "eaglesimbeye.com Home \u2014 approach section (verbatim design markup + motion hooks).",
+  "supports": {
+    "html": false,
+    "reusable": false,
+    "multiple": false,
+    "inserter": true,
+    "lock": false
+  },
+  "editorScript": "ees-home-approach-editor",
+  "render": "file:./render.php"
+}
