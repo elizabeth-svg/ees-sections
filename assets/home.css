@@ -78,3 +78,15 @@
     [data-figure] { font-size: 2.25rem !important; }
     [data-mark-cell] img { height: clamp(46px, 13vw, 62px) !important; }
   }
+
+  /* ── Hover / focus states ported from the design's style-hover / style-focus
+        attributes (the DC runtime applied these inline; here they are real CSS,
+        keyed on the exact attribute value so no markup change is needed).
+        !important beats each element's inline base style. Transitions are already
+        declared inline on the base elements, so these animate smoothly. ── */
+  [style-hover="opacity:1"]:hover { opacity: 1 !important; }
+  [style-hover="background:rgba(247,247,245,0.06)"]:hover { background: rgba(247,247,245,0.06) !important; }
+  [style-hover="background:rgba(247,247,245,0.1)"]:hover { background: rgba(247,247,245,0.1) !important; }
+  [style-hover="background:#f7f7f5;border-color:#f7f7f5;color:#08080a"]:hover { background: #f7f7f5 !important; border-color: #f7f7f5 !important; color: #08080a !important; }
+  [style-hover="border-bottom-color:#f2ea36;color:#f7f7f5"]:hover { border-bottom-color: #f2ea36 !important; color: #f7f7f5 !important; }
+  [style-focus="left:0"]:focus { left: 0 !important; }
