@@ -5,10 +5,12 @@
 	"title": "EES Hero",
 	"category": "design",
 	"icon": "cover-image",
-	"description": "Full-height hero: eyebrow, large headline, meta line, call-to-action, over an optional background image.",
+	"description": "Full-height hero: eyebrow, large headline, meta line, call-to-action, over an optional background video or image.",
 	"keywords": [ "ees", "hero", "section" ],
 	"textdomain": "ees-sections",
 	"attributes": {
+		"videoId":  { "type": "number" },
+		"videoUrl": { "type": "string", "default": "" },
 		"bgId":     { "type": "number" },
 		"bgUrl":    { "type": "string", "default": "" },
 		"eyebrow":  { "type": "string", "default": "" },

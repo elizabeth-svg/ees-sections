@@ -184,3 +184,45 @@ a.ees-case:hover .ees-case__title { color: #f2ea36; }
 .editor-styles-wrapper .ees-case { border-radius: 2px; }
 .editor-styles-wrapper .ees-hero,
 .editor-styles-wrapper .ees-spotlight { min-height: 420px; }
+
+/* ============================================================
+   Theme-override guards.
+   The active theme + a GoDaddy launch stylesheet force headings to
+   capitalize / weight 800 and set their own body font. These !important
+   rules keep the EES design intact regardless of theme.
+   ============================================================ */
+.ees-hero, .ees-spotlight, .ees-statement, .ees-case {
+	color: #f7f7f5 !important;
+	font-family: "Schibsted Grotesk", "Helvetica Neue", Helvetica, system-ui, sans-serif !important;
+}
+.ees-hero__headline, .ees-spotlight__statement, .ees-statement .ees-headline, .ees-case__title {
+	font-family: "Poppins", "Helvetica Neue", Helvetica, sans-serif !important;
+	font-weight: 700 !important;
+	text-transform: uppercase !important;
+	letter-spacing: -0.02em !important;
+	color: #f7f7f5 !important;
+}
+.ees-hero__eyebrow, .ees-spotlight__eyebrow, .ees-statement .ees-eyebrow, .ees-case__meta, .ees-cta {
+	font-family: "JetBrains Mono", ui-monospace, "SF Mono", monospace !important;
+	text-transform: uppercase !important;
+	font-weight: 400 !important;
+}
+.ees-statement .ees-body, .ees-case__desc, .ees-hero__meta {
+	font-family: "Schibsted Grotesk", "Helvetica Neue", Helvetica, sans-serif !important;
+	font-weight: 400 !important;
+	text-transform: none !important;
+}
+.ees-cta { color: #f7f7f5 !important; text-decoration: none !important; }
+.ees-cta:hover { color: #08080a !important; }
+a.ees-case:hover .ees-case__title { color: #f2ea36 !important; }
+
+/* ---- Hero video background ---- */
+.ees-hero { position: relative; }
+.ees-hero__video {
+	position: absolute; inset: 0; width: 100%; height: 100%;
+	object-fit: cover; z-index: 0; pointer-events: none;
+}
+.ees-hero__scrim { z-index: 1; }
+.ees-hero__inner { z-index: 2; }
+.ees-spotlight__scrim { z-index: 1; }
+.ees-spotlight__inner { z-index: 2; }

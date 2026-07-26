@@ -12,6 +12,30 @@
 	var TextControl = components.TextControl;
 	var __ = i18n.__;
 
+	function mediaPanel( title, urlKey, idKey, types, a, set ) {
+		return el(
+			PanelBody,
+			{ title: title, initialOpen: true },
+			el(
+				MediaUploadCheck,
+				null,
+				el( MediaUpload, {
+					onSelect: function ( m ) { var o = {}; o[ idKey ] = m.id; o[ urlKey ] = m.url; set( o ); },
+					allowedTypes: types,
+					value: a[ idKey ],
+					render: function ( o ) {
+						return el( Button, { variant: 'secondary', onClick: o.open },
+							a[ urlKey ] ? __( 'Replace', 'ees-sections' ) : __( 'Select', 'ees-sections' ) );
+					}
+				} )
+			),
+			a[ urlKey ] ? el( Button, {
+				variant: 'link', isDestructive: true, style: { marginTop: '8px' },
+				onClick: function () { var o = {}; o[ idKey ] = undefined; o[ urlKey ] = ''; set( o ); }
+			}, __( 'Remove', 'ees-sections' ) ) : null
+		);
+	}
+
 	blocks.registerBlockType( 'ees/hero', {
 		edit: function ( props ) {
 			var a = props.attributes;
@@ -28,28 +52,8 @@
 				el(
 					InspectorControls,
 					null,
-					el(
-						PanelBody,
-						{ title: __( 'Background image', 'ees-sections' ), initialOpen: true },
-						el(
-							MediaUploadCheck,
-							null,
-							el( MediaUpload, {
-								onSelect: function ( m ) { set( { bgId: m.id, bgUrl: m.url } ); },
-								allowedTypes: [ 'image' ],
-								value: a.bgId,
-								render: function ( o ) {
-									return el( Button, { variant: 'secondary', onClick: o.open },
-										a.bgUrl ? __( 'Replace image', 'ees-sections' ) : __( 'Select image', 'ees-sections' ) );
-								}
-							} )
-						),
-						a.bgUrl ? el( Button, {
-							variant: 'link', isDestructive: true,
-							onClick: function () { set( { bgId: undefined, bgUrl: '' } ); },
-							style: { marginTop: '8px' }
-						}, __( 'Remove image', 'ees-sections' ) ) : null
-					),
+					mediaPanel( __( 'Background video', 'ees-sections' ), 'videoUrl', 'videoId', [ 'video' ], a, set ),
+					mediaPanel( __( 'Background image (fallback / poster)', 'ees-sections' ), 'bgUrl', 'bgId', [ 'image' ], a, set ),
 					el(
 						PanelBody,
 						{ title: __( 'Call to action', 'ees-sections' ), initialOpen: false },
@@ -63,6 +67,10 @@
 				el(
 					'div',
 					blockProps,
+					a.videoUrl ? el( 'video', {
+						className: 'ees-hero__video', src: a.videoUrl, muted: true, loop: true,
+						autoPlay: true, playsInline: true, poster: a.bgUrl || undefined
+					} ) : null,
 					el( 'div', { className: 'ees-hero__scrim' } ),
 					el(
 						'div',

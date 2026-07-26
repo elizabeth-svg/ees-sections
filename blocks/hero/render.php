@@ -7,6 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$video    = isset( $attributes['videoUrl'] ) ? $attributes['videoUrl'] : '';
 $bg       = isset( $attributes['bgUrl'] ) ? $attributes['bgUrl'] : '';
 $eyebrow  = isset( $attributes['eyebrow'] ) ? $attributes['eyebrow'] : '';
 $headline = isset( $attributes['headline'] ) ? $attributes['headline'] : '';
@@ -18,6 +19,9 @@ $style   = '' !== $bg ? 'style="background-image:url(' . esc_url( $bg ) . ')"' :
 $wrapper = get_block_wrapper_attributes( array( 'class' => 'ees-hero' ) );
 ?>
 <section <?php echo $wrapper; // phpcs:ignore ?> <?php echo $style; // phpcs:ignore ?>>
+	<?php if ( '' !== $video ) : ?>
+		<video class="ees-hero__video" src="<?php echo esc_url( $video ); ?>" autoplay muted loop playsinline preload="metadata"<?php echo '' !== $bg ? ' poster="' . esc_url( $bg ) . '"' : ''; // phpcs:ignore ?>></video>
+	<?php endif; ?>
 	<div class="ees-hero__scrim" aria-hidden="true"></div>
 	<div class="ees-hero__inner">
 		<?php if ( '' !== $eyebrow ) : ?>
