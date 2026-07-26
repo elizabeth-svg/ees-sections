@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "ees/home-exact",
+  "title": "EES Home (exact design)",
+  "category": "design",
+  "icon": "layout",
+  "description": "The eaglesimbeye.com Home page, reproduced verbatim from the Claude Design with the full motion engine.",
+  "supports": { "html": false, "reusable": false, "inserter": true },
+  "editorScript": "ees-home-exact-editor",
+  "render": "file:./render.php"
+}
